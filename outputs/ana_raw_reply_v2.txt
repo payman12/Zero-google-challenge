@@ -1,0 +1,10 @@
+clip_id: yt_c0041
+model: anthropic/claude-sonnet-5.5
+response id: gen-1792970702-uqBTaMJMhxvZCj2o5V99
+finish_reason: stop
+tokens: 1230 in / 378 out
+cost (billed by OpenRouter): $0.006240
+langsmith: project zero-google-triage
+----- raw model reply (unedited) -----
+{"call": "age_restrict", "purpose": "An accredited freelance journalist documents a police dispersal of a permitted march, with sourcing, timestamps and an offer of rushes to newsrooms, as reporting on alleged excessive force.", "evidence": [{"start": 0, "end": 20, "source": "transcript", "reason": "Journalist establishes accreditation and vantage point, which frames the clip as reporting."}, {"start": 55, "end": 95, "source": "transcript", "reason": "Describes tear gas canisters fired into a crowd with nowhere to go, in a factual tone."}, {"start": 110, "end": 110, "source": "frames", "reason": "Injured leg with a visible wound and blood on the pavement, which is graphic but documentary."}, {"start": 145, "end": 145, "source": "frames", "reason": "Officers charge with batons raised, showing force against people."}, {"start": 185, "end": 230, "source": "transcript", "reason": "Cites the ministry's position, the ombudsman's file and availability of unedited rushes, which confirms news and public-interest purpose."}]}
+----- end raw model reply -----

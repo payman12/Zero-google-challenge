@@ -3,13 +3,14 @@ it is a challengE on "ZERO" for google
 
 ## Verdict on Ana's protest clip (yt_c0041)
 
-**Removal:** Not removed. The model returned `age_restrict`, which matches the ground truth, where the old sorter removed the clip outright.
+**Removal:** Not removed. The model returned `age_restrict` ([raw reply](outputs/ana_raw_reply_v2.txt)).
 
-**Timestamps:** All 5 evidence timestamps sit inside the 254 s clip. 2 of them fall inside the labelled violent window at 55–130 s: the range 55–95 s (tear gas, transcript) and the single point 110 s (the injured-leg frame, start = end = 110, 20 s before the window ends). The other 3 are outside it: the range 0–20 s (journalist credentials), the single point 145 s (the baton-charge frame, 15 s after the window ends) and the range 185–230 s (ministry, ombudsman, rushes).
+**Timestamps:** All 5 are inside the 254 s clip. 2 fall in the 55–130 s violent window: the range 55–95 s and the point 110 s. 3 do not: the range 0–20 s, the point 145 s and the range 185–230 s.
 
-**Right or wrong:** My judgment is that the model got both verdicts right. Not removing is right, because the model read the purpose as documentary reporting on alleged excessive force ("graphic but documentary"), not glorification. Not keeping is right, because the injured-leg frame and baton charges are too graphic for teenage viewers. This agrees with the labelled data for yt_c0041 in [data/clips.csv](data/clips.csv): `ground_truth_label` = `age_restrict`, `ground_truth_policy_reason` = "Graphic footage of injuries during a protest dispersal — age-restrict, news value".
+### Note: my judgment and the labelled data
+My judgment is that both verdicts are right. Not removing is right, because the model read the purpose as documentary reporting on alleged excessive force ("graphic but documentary"), not glorification. Not keeping is right, because the injured-leg frame and baton charges are too graphic for teenage viewers. This agrees with the labelled data for yt_c0041 in [data/clips.csv](data/clips.csv): `ground_truth_label` = `age_restrict`, `ground_truth_policy_reason` = "Graphic footage of injuries during a protest dispersal — age-restrict, news value".
 
-Raw model reply, unedited: [outputs/ana_raw_reply_v2.txt](outputs/ana_raw_reply_v2.txt). An earlier run with the previous prompt, before single frames were given as points, is in [outputs/ana_raw_reply.txt](outputs/ana_raw_reply.txt). It made the same call and also had 2 of 5 spans in the window: the ranges 60–95 s and 95–110 s.
+An earlier run, made before the prompt told the model to give single frames as points, is in [outputs/ana_raw_reply.txt](outputs/ana_raw_reply.txt). It made the same call and also had 2 of 5 spans in the window: the ranges 60–95 s and 95–110 s.
 
 ## Full test set: all 80 labelled clips
 

@@ -6,6 +6,8 @@ max_tokens = 1024
 
 [openrouter]
 base_url = "https://openrouter.ai/api/v1"
+# New OpenRouter accounts are capped at 20 requests/minute per model.
+requests_per_minute = 18
 
 [langsmith]
 # Tracing turns on only when LANGSMITH_API_KEY is set in .env.

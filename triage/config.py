@@ -19,6 +19,7 @@ class Settings:
     max_tokens: int
     base_url: str
     api_key: str = ""
+    requests_per_minute: int = 18
     tracing: bool = False
     langsmith_project: str = ""
 
@@ -45,6 +46,7 @@ def load_settings(config_path: Path = CONFIG_PATH, require_key: bool = True) -> 
         max_tokens=config["model"]["max_tokens"],
         base_url=config["openrouter"]["base_url"],
         api_key=api_key,
+        requests_per_minute=config["openrouter"].get("requests_per_minute", 18),
         tracing=tracing,
         langsmith_project=os.environ.get("LANGSMITH_PROJECT", "") if tracing else "",
     )

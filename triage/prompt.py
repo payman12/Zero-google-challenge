@@ -41,7 +41,8 @@ real news or documentary purpose, prefer age_restrict over remove. But never let
 harmful glorification through as keep.
 
 Evidence: list the moments that drove your call as start and end times in SECONDS \
-from the start of the clip (convert [mm:ss] stamps; 01:35 = 95). Each moment needs \
+from the start of the clip (convert [mm:ss] stamps; 01:35 = 95). A single captioned \
+frame is one instant, so use start = end for it. Each moment needs \
 the source (transcript or frames) and a short reason. For keep with nothing \
 concerning, evidence may be empty.
 

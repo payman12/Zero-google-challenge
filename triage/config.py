@@ -19,6 +19,8 @@ class Settings:
     max_tokens: int
     base_url: str
     api_key: str = ""
+    tracing: bool = False
+    langsmith_project: str = ""
 
 
 def load_settings(config_path: Path = CONFIG_PATH, require_key: bool = True) -> Settings:
@@ -30,10 +32,19 @@ def load_settings(config_path: Path = CONFIG_PATH, require_key: bool = True) -> 
     if require_key and not api_key:
         raise RuntimeError(f"OPENROUTER_API_KEY is empty: set it in {ENV_PATH}")
 
+    # LangSmith reads these env vars itself; tracing stays off until its key is set.
+    langsmith = config.get("langsmith", {})
+    tracing = langsmith.get("tracing", False) and bool(os.environ.get("LANGSMITH_API_KEY", "").strip())
+    os.environ["LANGSMITH_TRACING"] = "true" if tracing else "false"
+    if tracing:
+        os.environ.setdefault("LANGSMITH_PROJECT", langsmith["project"])
+
     return Settings(
         model_id=config["model"]["id"],
         temperature=config["model"]["temperature"],
         max_tokens=config["model"]["max_tokens"],
         base_url=config["openrouter"]["base_url"],
         api_key=api_key,
+        tracing=tracing,
+        langsmith_project=os.environ.get("LANGSMITH_PROJECT", "") if tracing else "",
     )

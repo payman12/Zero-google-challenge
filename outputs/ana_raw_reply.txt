@@ -1,0 +1,8 @@
+clip_id: yt_c0041
+model: anthropic/claude-sonnet-5.5
+response id: gen-1792954853-awIpSqdRqHu8n0ko6gNz
+finish_reason: stop
+tokens: 1210 in / 347 out
+----- raw model reply (unedited) -----
+{"call":"age_restrict","purpose":"An accredited freelance journalist documents police use of tear gas and baton charges on a permitted march, with sourcing and context to inform newsrooms and support an ombudsman inquiry.","evidence":[{"start":0,"end":20,"source":"transcript","reason":"Journalist establishes credentials and vantage point, a reporting frame."},{"start":95,"end":110,"source":"frames","reason":"Injured leg with visible wound and blood on pavement, graphic but documentary."},{"start":60,"end":95,"source":"frames","reason":"Tear gas fired into a dense crowd, people fleeing and coughing."},{"start":145,"end":185,"source":"frames","reason":"Officers charge with batons raised, force against protesters shown for reporting."},{"start":185,"end":250,"source":"transcript","reason":"Cites the ministry's position, the ombudsman file and offers unedited rushes to newsrooms, showing public-interest purpose with no glorification."}]}
+----- end raw model reply -----
